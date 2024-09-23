@@ -1,0 +1,69 @@
+﻿<ui:FluentWindow x:Class="C2Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:C2Windows"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+    mc:Ignorable="d"
+    WindowBackdropType="Mica"
+                 ExtendsContentIntoTitleBar="True"
+
+    Background="Transparent"
+    Height="640" Width="1024"
+    MinWidth="480"
+    Title="Cider"
+>
+    <Window.TaskbarItemInfo>
+        <TaskbarItemInfo x:Name="taskBarItemInfo1"
+                     ThumbnailClipMargin="80,0,80,140"
+                     >
+            <TaskbarItemInfo.ThumbButtonInfos>
+                <ThumbButtonInfoCollection>
+                    <ThumbButtonInfo
+                        x:Name="TBAdd"
+DismissWhenClicked="True"
+                        Click="TBAdd_Click"
+ImageSource="/Resources/nucleo/Tempplus@2x.png"/>
+                    <ThumbButtonInfo
+DismissWhenClicked="True"
+                        x:Name="TBShuffle"
+                        Click="TBShuffle_Click"
+ ImageSource="/Resources/nucleo/Tempshuffle@2x.png"/>
+                    <ThumbButtonInfo
+                    DismissWhenClicked="True"
+                        x:Name="TBPrev"
+                        Click="TBPrev_Click"
+                     ImageSource="/Resources/nucleo/Tempmedia-previous@2x.png"/>
+                    <ThumbButtonInfo
+                    DismissWhenClicked="True"
+                        x:Name="TBPlayPause"
+                        Click="TBPlayPause_Click"
+                     ImageSource="/Resources/nucleo/Tempmedia-play-pause-toggle@2x.png"/>
+                    <ThumbButtonInfo
+                    DismissWhenClicked="True"
+                        x:Name="TBNext"
+                        Click="TBNext_Click"
+                     ImageSource="/Resources/nucleo/Tempmedia-next@2x.png"/>
+                    <ThumbButtonInfo
+                        x:Name="TBRepeat"
+                        Click="TBRepeat_Click"
+DismissWhenClicked="True"
+ ImageSource="/Resources/nucleo/Temprepeat@2x.png"/>
+                    <ThumbButtonInfo
+                    DismissWhenClicked="True"
+                        x:Name="TBStar"
+                        Click="TBStar_Click"
+                     ImageSource="/Resources/nucleo/Tempstar@2x.png"/>
+                </ThumbButtonInfoCollection>
+            </TaskbarItemInfo.ThumbButtonInfos>
+        </TaskbarItemInfo>
+    </Window.TaskbarItemInfo>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0" x:Name="WV" AllowDrop="False"></Grid>
+    </Grid>
+</ui:FluentWindow>
